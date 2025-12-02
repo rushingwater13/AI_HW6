@@ -22,7 +22,7 @@ def reward(state):
     elif state == "GN":
         return -1
     else:
-        return -0.4
+        return -0.04
 
 
 # calculate the actual direction to go from the probability
@@ -103,7 +103,7 @@ def terminal(position):
     return ogpolicy[row][col] in ("GP", "GN")
 
 
-
+# In this case, (1, 1) is represented by (2, 0)
 start_squares = [(0, 0), (0, 1), (0,2), (1, 0), (1, 2), (2, 0), (2, 1), (2, 2), (2, 3)]
 utilities = []
 
@@ -131,4 +131,4 @@ for pos in start_squares:
         
     final_reward = cumulative_reward/10
     utilities.append(final_reward)
-    print(f"utility {round(final_reward, 1)}")
+    print(f"utility {round(final_reward, 4)}")
